@@ -5,7 +5,7 @@ resource "aws_ecs_cluster" "main" {
 }
 
 data "template_file" "rezume_app" {
-  template = file("./templates/ecs/rezume_app.json.tpl")
+  template = file("${path.module}/templates/ecs/rezume_app.json.tpl")
 
   vars = {
     app_image      = var.app_image
